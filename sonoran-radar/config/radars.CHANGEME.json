@@ -1,0 +1,114 @@
+[
+    {
+        "ID": "1",
+        "Vehicle": "POLICE",
+        "Rotation": {
+            "yaw": -11.44999999999997,
+            "pitch": 1.7,
+            "roll": 0.0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 0.8,
+            "x": 0.3,
+            "z": 0.4
+        },
+        "type": 1
+    },
+    {
+        "ID": "2",
+        "Vehicle": "FBI",
+        "Rotation": {
+            "yaw": -10.88000000000002,
+            "pitch": 1.28,
+            "roll": 0.0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 0.78,
+            "x": 0.35,
+            "z": 0.35
+        },
+        "type": 1
+    },
+    {
+        "ID": "3",
+        "Vehicle": "FBI2",
+        "Rotation": {
+            "yaw": 1.8900000000001,
+            "pitch": -4.42,
+            "roll": 0.0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 1.14,
+            "x": -0.37,
+            "z": 0.68
+        },
+        "type": 1
+    },
+    {
+        "ID": "4",
+        "Vehicle": "POLICE2",
+        "Rotation": {
+            "yaw": -12.97000000000011,
+            "pitch": 1.5,
+            "roll": 0.0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 0.72,
+            "x": 0.36,
+            "z": 0.34
+        },
+        "type": 1
+    },
+    {
+        "ID": "5",
+        "Vehicle": "POLICE4",
+        "Rotation": {
+            "yaw": -9.4,
+            "pitch": 1.3,
+            "roll": 0.0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 0.8,
+            "x": 0.28,
+            "z": 0.39
+        },
+        "type": 1
+    },
+    {
+        "ID": "6",
+        "Vehicle": "SHERIFF",
+        "Rotation": {
+            "roll": 0.0,
+            "pitch": 1.28,
+            "yaw": -6.76
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 0.88,
+            "x": 0.23,
+            "z": 0.39
+        },
+        "type": 1
+    },
+    {
+        "ID": "7",
+        "Vehicle": "SHERIFF2",
+        "Rotation": {
+            "roll": 0.0,
+            "pitch": 1.28,
+            "yaw": 0
+        },
+        "Bone": -1,
+        "Position": {
+            "y": 1.19,
+            "x": -0.4,
+            "z": 0.68
+        },
+        "type": 1
+    }
+]

@@ -1,0 +1,10 @@
+TriggerEvent('chat:addSuggestion', '/'..Config.OpenDoorMenu.command, Locale('command_opendoormenu'))
+RegisterCommand(Config.OpenDoorMenu.command, function()
+    TriggerEvent('cd_doorlock:OpenDoorLockMenu')
+end, false)
+
+RegisterKeyMapping(Config.ToggleDoorLock.command, Locale('command_toggledoorlock'), 'keyboard', Config.ToggleDoorLock.key)
+TriggerEvent('chat:addSuggestion', '/'..Config.ToggleDoorLock.command, Locale('command_toggledoorlock'))
+RegisterCommand(Config.ToggleDoorLock.command, function()
+    TriggerEvent('cd_doorlock:ToggleDoorState')
+end, false)

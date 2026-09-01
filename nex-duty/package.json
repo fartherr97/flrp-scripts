@@ -1,0 +1,9 @@
+{
+  "name": "nex-duty",
+  "version": "1.0.0",
+  "description": "nex-duty",
+  "private": true,
+  "dependencies": {
+    "ws": "^8.20.0"
+  }
+}

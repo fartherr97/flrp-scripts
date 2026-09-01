@@ -1,0 +1,38 @@
+{
+  "name": "pcore",
+  "version": "0.0.1",
+  "description": "Monolithic core for in-house scripts",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clearbuild && npm run typecheck && npm run test && node build/build-bundle.js",
+    "clearbuild": "rimraf ./dist",
+    "typecheck": "tsc --noEmit -p client/tsconfig.json && tsc --noEmit -p server/tsconfig.json",
+    "watch": "npm run clearbuild && cross-env IS_WATCH_MODE=1 node build/build-bundle.js",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "Project Error",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "@citizenfx/client": "^2.0.6063-1",
+    "@citizenfx/server": "^2.0.6063-1",
+    "@jest/globals": "^29.7.0",
+    "@types/node": "^20.7.1",
+    "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.4",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "discord.js": "^14.13.0"
+  }
+}

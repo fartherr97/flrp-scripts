@@ -1,0 +1,1060 @@
+[
+    {
+        "coords": {
+            "x": -1968.6062011719,
+            "w": 48.999973297119,
+            "z": 10.877113342285,
+            "y": -471.55065917969
+        },
+        "defaultText": {
+            "secondLine": " u u ",
+            "firstLine": "       ",
+            "thirdLine": "     "
+        },
+        "icon": "bv_smart_drivecare"
+    },
+    {
+        "coords": {
+            "x": 2122.1013183594,
+            "w": 233.99981689453,
+            "z": 49.430641174316,
+            "y": 6032.8041992188
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 1620.9342041016,
+            "w": 167.99987792969,
+            "z": 81.301879882812,
+            "y": 1113.6678466797
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 1954.310546875,
+            "w": 325.0,
+            "z": 53.584655761719,
+            "y": 2504.4406738281
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 554.32385253906,
+            "w": 334.0,
+            "z": 32.319610595703,
+            "y": -372.91738891602
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 579.90002441406,
+            "w": 155.99952697754,
+            "z": 34.788860321045,
+            "y": -337.38436889648
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2047.1314697266,
+            "w": 132.99990844727,
+            "z": 52.215137481689,
+            "y": 2610.9548339844
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2339.5219726562,
+            "w": 244.9998626709,
+            "z": 47.098838806152,
+            "y": 2984.6748046875
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2008.4978027344,
+            "w": 244.9998626709,
+            "z": 45.748458862305,
+            "y": 2654.697265625
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2732.5581054688,
+            "w": 155.99963378906,
+            "z": 54.463748931885,
+            "y": 3272.4865722656
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2883.6391601562,
+            "w": 346.0,
+            "z": 51.68860244751,
+            "y": 3632.1889648438
+        },
+        "defaultText": {
+            "secondLine": "1234",
+            "firstLine": "1234",
+            "thirdLine": "1234"
+        }
+    },
+    {
+        "coords": {
+            "x": -90.220024108887,
+            "w": 253.99955749512,
+            "z": 43.291240692139,
+            "y": -723.75708007812
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2749.1611328125,
+            "w": 15.999979972839,
+            "z": 44.192741394043,
+            "y": 4588.5546875
+        },
+        "defaultText": {
+            "secondLine": " u u ",
+            "firstLine": "wa    g",
+            "thirdLine": "     "
+        },
+        "icon": "bv_smart_drivecare"
+    },
+    {
+        "coords": {
+            "x": 2638.2607421875,
+            "w": 199.99961853027,
+            "z": 43.566692352295,
+            "y": 5033.2670898438
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "icon": "bv_smart_flood"
+    },
+    {
+        "coords": {
+            "x": -743.38311767578,
+            "w": 89.999885559082,
+            "z": 23.990354537964,
+            "y": -513.70532226562
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -445.06665039062,
+            "w": 269.99969482422,
+            "z": 24.123254776001,
+            "y": -513.64306640625
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -202.76458740234,
+            "w": 121.99969482422,
+            "z": 28.668190002441,
+            "y": -1796.4968261719
+        },
+        "defaultText": {
+            "secondLine": "of",
+            "firstLine": "report",
+            "thirdLine": "pedestrians"
+        },
+        "icon": "bv_smart_pedestrian"
+    },
+    {
+        "coords": {
+            "x": 80.516258239746,
+            "w": 269.99969482422,
+            "z": 17.51057434082,
+            "y": -2040.5129394531
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -89.696464538574,
+            "w": 111.99980926514,
+            "z": 22.992635726929,
+            "y": -2069.5490722656
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 712.80285644531,
+            "w": 173.9995880127,
+            "z": 5.2128005027771,
+            "y": -3035.7331542969
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -374.07006835938,
+            "w": 151.99964904785,
+            "z": 17.811515808105,
+            "y": -1681.8887939453
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -1698.9853515625,
+            "w": 229.99975585938,
+            "z": 63.809642791748,
+            "y": 1.4262487888336
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -2111.8276367188,
+            "w": 320.0,
+            "z": 18.170526504517,
+            "y": -218.60554504394
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -1844.5789794922,
+            "w": 29.999988555908,
+            "z": 39.563083648682,
+            "y": -256.49917602539
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -532.85943603516,
+            "w": 211.99952697754,
+            "z": 34.165554046631,
+            "y": -328.93719482422
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -1652.5061035156,
+            "w": 135.99967956543,
+            "z": 59.772548675537,
+            "y": 4844.5493164062
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -291.83135986328,
+            "w": 316.0,
+            "z": 30.222248077393,
+            "y": 6085.4931640625
+        },
+        "defaultText": {
+            "secondLine": "queue",
+            "firstLine": "slow down",
+            "thirdLine": "ahead"
+        },
+        "icon": "bv_smart_trafficahead"
+    },
+    {
+        "coords": {
+            "x": 2449.9318847656,
+            "w": 21.999988555908,
+            "z": 43.858947753906,
+            "y": 5665.7778320312
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2193.4782714844,
+            "w": 123.99975585938,
+            "z": 32.301906585693,
+            "y": 3788.7846679688
+        },
+        "defaultText": {
+            "secondLine": "studios",
+            "firstLine": "london",
+            "thirdLine": "fivem"
+        }
+    },
+    {
+        "coords": {
+            "x": -1136.9641113281,
+            "w": 117.99978637695,
+            "z": 4.2735800743103,
+            "y": -1330.9791259766
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 805.07867431641,
+            "w": 275.99969482422,
+            "z": 32.926376342773,
+            "y": 3539.2102050781
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -1536.2546386719,
+            "w": 247.99951171875,
+            "z": 12.373041152954,
+            "y": -797.89880371094
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 478.05953979492,
+            "w": 83.999900817871,
+            "z": 25.804773330688,
+            "y": 6562.0322265625
+        },
+        "defaultText": {
+            "secondLine": "1234",
+            "firstLine": "alfie ",
+            "thirdLine": "5678"
+        }
+    },
+    {
+        "coords": {
+            "x": -1996.6799316406,
+            "w": 316.0,
+            "z": 55.693145751953,
+            "y": 4522.1782226562
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -2658.6875,
+            "w": 352.0,
+            "z": 15.674699783325,
+            "y": 2630.6862792969
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": -2611.9904785156,
+            "w": 291.99981689453,
+            "z": 27.157592773438,
+            "y": 2321.2104492188
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 737.38366699219,
+            "w": 245.99948120117,
+            "z": 35.010707855225,
+            "y": -621.54895019531
+        },
+        "defaultText": {
+            "secondLine": "queue",
+            "firstLine": "caution",
+            "thirdLine": "ahead"
+        },
+        "icon": "bv_smart_trafficahead"
+    },
+    {
+        "coords": {
+            "x": 1295.5040283203,
+            "w": 29.999982833862,
+            "z": 49.005409240723,
+            "y": -2194.890625
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 1101.7208251953,
+            "w": 103.99983978271,
+            "z": 31.132476806641,
+            "y": -2571.8439941406
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 1754.2171630859,
+            "w": 175.99952697754,
+            "z": 73.947532653809,
+            "y": 1851.4086914062
+        },
+        "defaultText": {
+            "secondLine": "2",
+            "firstLine": "1",
+            "thirdLine": "3"
+        },
+        "icon": "bv_smart_slippery"
+    },
+    {
+        "coords": {
+            "x": 2564.4213867188,
+            "w": 191.99955749512,
+            "z": 107.48042297363,
+            "y": 533.00158691406
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 2246.009765625,
+            "w": 137.99969482422,
+            "z": 89.202377319336,
+            "y": -467.8371887207
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 916.69879150391,
+            "w": 39.999977111816,
+            "z": 39.112194061279,
+            "y": -749.38604736328
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 1697.7863769531,
+            "w": 0.0,
+            "z": 84.270927429199,
+            "y": 1448.1340332031
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "coords": {
+            "x": 732.18511962891,
+            "w": 4.0000095367432,
+            "z": 5.3980503082275,
+            "y": -2749.4631347656
+        },
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "a",
+            "firstLine": "q1",
+            "thirdLine": "a"
+        },
+        "side": "right",
+        "coords": {
+            "x": -1990.95703125,
+            "w": 229.99940490722657,
+            "z": 10.39559745788574,
+            "y": -478.8663024902344
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "hijkl",
+            "firstLine": "abcdefg",
+            "thirdLine": "mnopq"
+        },
+        "side": "right",
+        "coords": {
+            "x": -3193.05859375,
+            "w": 337.2332763671875,
+            "z": 8.91526794433593,
+            "y": 1123.7579345703126
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 1927.5042724609376,
+            "w": 0.0,
+            "z": 58.55475616455078,
+            "y": 1897.5589599609376
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 1858.6295166015626,
+            "w": 187.99420166015626,
+            "z": 58.80104064941406,
+            "y": 1889.5303955078128
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2113.92724609375,
+            "w": 213.19940185546876,
+            "z": 74.36048126220703,
+            "y": 1344.27587890625
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2119.665771484375,
+            "w": 23.69983673095703,
+            "z": 74.37968444824219,
+            "y": 1387.9923095703126
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2238.2119140625,
+            "w": 219.9005889892578,
+            "z": 76.19722747802735,
+            "y": 1183.40283203125
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2260.645263671875,
+            "w": 38.39949417114258,
+            "z": 76.22411346435547,
+            "y": 1201.4674072265626
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2440.480224609375,
+            "w": 210.598861694336,
+            "z": 86.65325164794922,
+            "y": 958.8223266601564
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2493.538330078125,
+            "w": 25.29981803894043,
+            "z": 85.70921325683594,
+            "y": 925.3065185546876
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2527.09423828125,
+            "w": 173.1928253173828,
+            "z": 111.93771362304688,
+            "y": 516.8765258789063
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2619.1396484375,
+            "w": 2.49999785423278,
+            "z": 93.5198974609375,
+            "y": 630.3457641601563
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2603.119384765625,
+            "w": 0.0,
+            "z": 99.23184204101564,
+            "y": 549.2598266601563
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2615.391357421875,
+            "w": 345.6992797851563,
+            "z": 96.96951293945313,
+            "y": 268.711669921875
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2491.546875,
+            "w": 160.5931396484375,
+            "z": 95.51921844482422,
+            "y": 44.43244171142578
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2373.05712890625,
+            "w": 129.69366455078126,
+            "z": 84.02649688720703,
+            "y": -244.79087829589845
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2403.91943359375,
+            "w": 155.99322509765626,
+            "z": 84.15657043457031,
+            "y": -247.89837646484376
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2390.54833984375,
+            "w": 340.3989562988281,
+            "z": 83.81817626953125,
+            "y": -273.1144714355469
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2398.763427734375,
+            "w": 331.4984436035156,
+            "z": 80.82674407958985,
+            "y": -317.9778137207031
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2402.865966796875,
+            "w": 56.29877853393555,
+            "z": 70.83914184570313,
+            "y": -460.6890563964844
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2421.15673828125,
+            "w": 30.09977531433105,
+            "z": 71.10481262207031,
+            "y": -448.4114379882813
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2393.283203125,
+            "w": 242.20147705078129,
+            "z": 71.14884948730469,
+            "y": -454.66607666015627
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2358.9208984375,
+            "w": 227.90147399902345,
+            "z": 72.32901763916016,
+            "y": -418.085693359375
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 2234.3291015625,
+            "w": 138.99351501464845,
+            "z": 79.23514556884766,
+            "y": -432.1138610839844
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "right",
+        "coords": {
+            "x": 2035.35107421875,
+            "w": 123.09400177001952,
+            "z": 93.73915100097656,
+            "y": -636.6982421875
+        }
+    },
+    {
+        "icon": "bv_smart_speedcamera",
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "camera",
+            "firstLine": "check speed",
+            "thirdLine": "zone"
+        },
+        "side": "left",
+        "coords": {
+            "x": 2042.731201171875,
+            "w": 313.2975158691406,
+            "z": 93.6747055053711,
+            "y": -650.525634765625
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 1874.963134765625,
+            "w": 125.29385375976564,
+            "z": 80.29403686523438,
+            "y": -778.2284545898438
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 1869.7581787109376,
+            "w": 308.8980102539063,
+            "z": 79.696044921875,
+            "y": -783.9229125976563
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 1691.5657958984376,
+            "w": 305.5982666015625,
+            "z": 65.9339370727539,
+            "y": -912.6423950195313
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": 1679.9208984375,
+            "w": 124.99388885498049,
+            "z": 65.2151107788086,
+            "y": -918.7598266601564
+        }
+    },
+    {
+        "addedByCommand": true,
+        "defaultText": {
+            "secondLine": "",
+            "firstLine": "",
+            "thirdLine": ""
+        },
+        "side": "left",
+        "coords": {
+            "x": -205.4281768798828,
+            "w": 304.8982849121094,
+            "z": 28.88935089111328,
+            "y": -1800.9100341796876
+        }
+    }
+]

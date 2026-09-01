@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="area-indicator" id="area-indicator" style="display: none;">
+		<span class="area-label">AREA OF PLAY</span>
+		<span class="area-name" id="area-of-play">BLAINE COUNTY</span>
+	</div>
+
+	<div class="spawn-page" id="spawn-page" style="display: none;">
+		<div class="spawn-selector" id="spawn-selector">
+			<div class="header">
+				<div class="header-title">Spawn Selector</div>
+				<div class="header-description">Select an option below to be magically teleported to.. 🧙‍♂️</div>
+			</div>
+			<div class="spawn-options">
+				<div class="spawn-locations" id="spawn-locations"></div>
+			</div>
+			<button class="spawn-button main-spawn" id="spawn-at-last-location">
+				<i class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="11" r="3" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg></i>
+				SPAWN AT LAST LOCATION
+			</button>
+		</div>
+		<div class="spawn-preview"></div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

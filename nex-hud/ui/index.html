@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="area-notification" id="area-notification">
+        <div class="area-title">Welcome to <strong id="area-name"></strong></div>
+        <div class="area-body" id="area-body" style="display: none;">
+            <div class="status" id="status-peacetime" style="display: none;">
+                <span class="status-type">Peacetime Active</span>
+                <span class="status-badge peacetime" id="peacetime-time"></span>
+            </div>
+            <div class="status" id="status-priority" style="display: none;">
+                <span class="status-type">Priority Cooldown</span>
+                <span class="status-badge priority" id="priority-time"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="dynamic-container" style="display: none;">
+        <div class="right-notifications" id="right-notifications"></div>
+        <div class="center-notifications" id="center-notifications"></div>
+        <div class="left-notifications" id="left-notifications"></div>
+
+        <div class="hud-container" id="hud-container" data-drag-id="hud-container">
+            <div class="microphone" id="microphone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 384 512"><path fill="#ffffff" d="M192 0C139 0 96 43 96 96l0 160c0 53 43 96 96 96s96-43 96-96l0-160c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 89.1 66.2 162.7 152 174.4l0 33.6-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l72 0 72 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0 0-33.6c85.8-11.7 152-85.3 152-174.4l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-40z"/></svg>
+            </div>
+            <div class="status-bar health-bar" id="health-bar">
+                <div class="fill-bar health-fill" id="health"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg>
+            </div>
+            <div class="status-bar armour-bar" id="armour-bar">
+            <div class="fill-bar armour-fill" id="armour"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.884 2.007l.114 -.007l.118 .007l.059 .008l.061 .013l.111 .034a.993 .993 0 0 1 .217 .112l.104 .082l.255 .218a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717a13 13 0 0 1 -9.208 16.25a1 1 0 0 1 -.502 0a13 13 0 0 1 -9.209 -16.25a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.531 -2.527l.263 -.225l.096 -.075a.993 .993 0 0 1 .217 -.112l.112 -.034a.97 .97 0 0 1 .119 -.021z" /></svg>
+            </div>
+        </div>
+
+        <div class="map-header" id="server-details" data-drag-id="server-details">
+            <div class="header-left">ID: <span class="accent" id="server-id"></span></div>
+            <div class="header-center" id="vanity-url"></div>
+            <div class="header-right"><span class="accent" id="time"></span></div>
+        </div>
+
+        <div id="compass-container" style="display: none;" data-drag-id="compass-container">
+            <div id="compass"></div>
+            <div id="divider"></div>
+            <div id="street-information">
+                <div id="street"></div>
+                <div id="area"></div>
+            </div>
+        </div>
+
+        <div class="driving-container" id="driving-container" style="display: none;" data-drag-id="driving-container">
+            <div class="speedometer-container">
+                <div class="digits">
+                    <span class="digit digit-1">0</span>
+                    <span class="digit digit-2">0</span>
+                    <span class="digit digit-3">0</span>
+                </div>
+                <div class="unit">MPH</div>
+            </div>
+            <div class="indicator-container">
+                <div class="indicator">FUEL <span class="indicator-percentage" id="fuel-percentage">78%</span></div>
+                <div class="indicator center" id="indicator-key"><span class="indicator-key" id="key">E</span> <span id="indicator-text">FASTEN SEATBELT</span></div>
+                <div class="indicator"><span class="indicator-percentage" id="engine-percentage">100%</span> ENG</div>
+            </div>
+            <div class="driving-compass">
+                <div id="compass"></div>
+                <div id="divider"></div>
+                <div id="street-information">
+                    <div id="street"></div>
+                    <div id="area"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details" id="details" data-drag-id="details">
+            <div class="detail-item" id="player-details">
+                <span class="label">Username:</span> <span class="value" id="username"></span>
+                <span class="separator" id="name-seperator" style="display: none;">//</span>
+                <span class="label" id="headtag-label" style="display: none;">Headtags:</span> <span class="value" id="headtags" style="display: none;"></span>
+            </div>
+            <div class="detail-row">
+                <div class="detail-item">
+                    <span class="label" data-key="aop">Area of Play:</span> <span class="value" id="aop"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label" data-key="peacetime">Peacetime:</span> <span class="value" id="peacetime"></span>
+                </div>
+            </div>
+            <div id="priority-zones" class="priority-zones">
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <span class="label" data-key="bc"></span> <span class="value" id="priority-bc"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label" data-key="ls"></span> <span class="value" id="priority-ls"></span>
+                    </div>
+                </div>
+                <div class="detail-row" id="extra-priority-zones">
+                    <div class="detail-item">
+                        <span class="label" data-key="fz"></span> <span class="value" id="priority-fz"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label" data-key="banks"></span> <span class="value" id="priority-banks"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-item" id="job-details">
+                <span class="label" id="job-label">Job:</span> <span class="value" id="job-name"></span>
+                <span class="separator" id="job-seperator">//</span>
+                <span class="label" id="callsign-label">Callsign:</span> <span class="value" id="callsign"></span>
+                <span class="separator" id="time-seperator">//</span>
+                <span class="label" id="time-label">Time:</span> <span class="value" id="detail-time"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar" id="interface-sidebar" style="display: none;">
+        <div class="sidebar-header">
+            <img src="assets/server_icon.png">
+            <div class="sidebar-information">
+                <div class="sidebar-heading" id="server-name"></div>
+                <div class="sidebar-subtext">Interface Settings and Configuration</div>
+            </div>
+        </div>
+        <div class="sidebar-body" id="sidebar-body">
+            <div class="sidebar-card" id="player_details_visibility">
+                <div class="sidebar-title">Player Details</div>
+                <div class="card-text">This controls the visibility of your username and headtags.</div>
+                <div class="controls">
+                    <div class="control" value=2>Show Details</div>
+                    <div class="control" value=1>Hide Details</div>
+                </div>
+            </div>
+            <div class="sidebar-card" id="map_visibility">
+                <div class="sidebar-title">Mini Map</div>
+                <div class="card-text">This controls the visibility of the mini map.</div>
+                <div class="controls">
+                    <div class="control" value=2>Always Show</div>
+                    <div class="control" value=1>Only Show in Vehicle</div>
+                </div>
+            </div>
+            <div class="sidebar-card" id="priority_zones_visibility">
+                <div class="sidebar-title">Priority Zones</div>
+                <div class="card-text">This controls the visibility of the Priority HUD Element.</div>
+                <div class="controls">
+                    <div class="control" value=2>Show Details</div>
+                    <div class="control" value=1>Hide Details</div>
+                </div>
+            </div>
+            <div class="sidebar-card" id="server_details_visibility">
+                <div class="sidebar-title">Server Details</div>
+                <div class="card-text">This controls the visibility of the Server Details, above the Mini Map.</div>
+                <div class="controls">
+                    <div class="control" value=2>Show Details</div>
+                    <div class="control" value=1>Hide Details</div>
+                </div>
+            </div>
+            <div class="sidebar-card" id="area_notifications">
+                <div class="sidebar-title">Area Notifications</div>
+                <div class="card-text">This controls the visibility of area notifications for a more realistic feel.</div>
+                <div class="controls">
+                    <div class="control" value=1>Disabled</div>
+                    <div class="control" value=2>Only for Priorities</div>
+                    <div class="control" value=3>Always Enabled</div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="sidebar-card" id="accent-card">
+                <div class="sidebar-title">Accent Colours</div>
+                <div class="card-text">If you’d like to spruce up the interface, pick a colour!</div>
+                <div class="colour-controls">
+                    <div class="colour-control" style="background-color: #DC206B;"></div>
+                    <div class="colour-control" style="background-color: #FF70B2;"></div>
+                    <div class="colour-control" style="background-color: #FFB3E9;"></div>
+                    <div class="colour-control" style="background-color: #FFA3A3;"></div>
+                    <div class="colour-control" style="background-color: #FF857A;"></div>
+                    <div class="colour-control" style="background-color: #FFC07A;"></div>
+                    <div class="colour-control" style="background-color: #FFD2A6;"></div>
+                    <div class="colour-control" style="background-color: #FFF585;"></div>
+                    <div class="colour-control" style="background-color: #6FFF9F;"></div>
+                    <div class="colour-control" style="background-color: #85FF85;"></div>
+                    <div class="colour-control" style="background-color: #8DFFCE;"></div>
+                    <div class="colour-control" style="background-color: #7AFFE6;"></div>
+                    <div class="colour-control" style="background-color: #A3E1FF;"></div>
+                    <div class="colour-control" style="background-color: #7ABFFF;"></div>
+                    <div class="colour-control" style="background-color: #329CFF;"></div>
+                    <div class="colour-control" style="background-color: #B5A3FF;"></div>
+                    <div class="colour-control" style="background-color: #A27AFF;"></div>
+                    <div class="colour-control" style="background-color: #E134FB;"></div>
+                </div>
+            </div>
+            <div class="sidebar-button-card" onclick="enable_edit_mode()">
+                <div class="button-sidebar-title">Enter Interface Editor</div>
+                <div class="button-card-text">Drag around the elements for your own touch!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="editor" id="editor-controls" style="display: none;">
+        <span class="editor-title">You are in the <b>Editor Mode</b></span>
+        <div class="editor-controls">
+            <div class="editor-control" onclick="exit_edit_mode('exit')">Exit without Saving</div>
+            <div class="editor-control" onclick="exit_edit_mode('revert')">Revert to Default</div>
+            <div class="editor-control" onclick="toggle_grid()">Toggle Grid</div>
+            <div class="editor-control"onclick="exit_edit_mode('save')">Save Changes</div>
+        </div>
+    </div>    
+
+    <div class="interface-management" id="interface-management" style="display: none;">
+        <div class="interface-header" id="management-header"><h1>Interface Management</h1></div>
+        <div class="interface-body">
+            <div class="column">
+                <div class="interface-card">
+                    <div class="card-title">Server Peacetime</div>
+                    <div class="interface-card-description">This controls the peacetime status across the server.</div>
+                    <div class="card-content" id="manage-peacetime"></div>
+                </div>
+                <div class="interface-card">
+                    <div class="card-title">Area of Play</div>
+                    <div class="interface-card-description">This controls the active area of play across the server.</div>
+                    <div class="card-content" id="manage-aop"></div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="interface-card">
+                    <div class="card-title">Priority Zones</div>
+                    <div class="interface-card-description">This control the active priority zones across the server.</div>
+                    <div class="card-content" id="manage-priority"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vote-ui" id="vote-interface" style="display: none;">
+        <div class="vote-header">
+            <div class="vote-title">Area of Play Vote</div>
+            <div class="vote-description">Select an area from those below to cast your vote!</div>
+        </div>
+        <div class="vote-options">
+            <div class="vote-option" id="vote-options-1">
+                <div class="vote-number">1</div>
+                <div class="vote-details" id="vote-option-1"></div>
+                <button class="vote-button" id="vote-button-1">Vote</button>
+            </div>
+            <div class="vote-option" id="vote-options-2">
+                <div class="vote-number">2</div>
+                <div class="vote-details" id="vote-option-2"></div>
+                <button class="vote-button" id="vote-button-2">Vote</button>
+            </div>
+            <div class="vote-option" id="vote-options-3">
+                <div class="vote-number">3</div>
+                <div class="vote-details" id="vote-option-3"></div>
+                <button class="vote-button" id="vote-button-3">Vote</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="voting-results" id="voting-results" style="display: none;">
+        <div class="voting-title" id="results-title">Live Voting Results [120s]</div>
+        <div class="vote-options">
+            <div class="voting-option" id="vote-result-1">
+                <div class="voting-number">1</div>
+                <div class="voting-details" id="results-name-1"></div>
+                <div class="voting-stats" id="results-stats-1"></div>
+            </div>
+            <div class="voting-option" id="vote-result-2">
+                <div class="voting-number">2</div>
+                <div class="voting-details" id="results-name-2"></div>
+                <div class="voting-stats" id="results-stats-2"></div>
+            </div>
+            <div class="voting-option" id="vote-result-3">
+                <div class="voting-number">3</div>
+                <div class="voting-details" id="results-name-3"></div>
+                <div class="voting-stats" id="results-stats-3"></div>
+            </div>
+        </div>
+        <div class="voting-footer">/vote to vote, /togglevotes to toggle visibility</div>
+    </div>
+
+    <div class="manager-modal" id="manager-modal" style="display: none;">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-title"></div>
+            <div class="modal-description" id="modal-description"></div>
+        </div>
+
+        <div class="modal-control" id="modal-select-priority" style="display: none;">
+            <label for="zone-type" class="modal-label">Priority Type:</label>
+            <select id="type-select" class="dropdown"></select>
+        </div>
+
+        <div class="modal-control" id="modal-select-aop" style="display: none;">
+            <label for="zone-type" class="modal-label">Action:</label>
+            <select id="area-select" class="dropdown">
+                <option value="" disabled selected>Choose an action...</option>
+                <option value="set">Set the Area of Play</option>
+                <option value="vote" id="create-vote">Create a Server Vote</option>
+            </select>
+        </div>
+
+        <div class="modal-control" id="modal-details-aop" style="display: none;">
+            <label for="zone-type" class="modal-label" id="aop-details-title">Details:</label>
+            <div class="details-box" id="details-box">
+                <div class="details-row">
+                    <strong id="details-title-aop">Area of Play:</strong>
+                    <span id="details-value-aop"></span>
+                </div>
+                <div class="details-row">
+                    <strong id="details-title-setby">Set by:</strong>
+                    <span id="details-value-setby"></span>
+                </div>
+                <div class="details-row">
+                    <strong id="details-title-active">Active for</strong>
+                    <span id="details-value-active"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-control" id="modal-select-aop-secondary" style="display: none;">
+            <label for="zone-type" class="modal-label" id="aop-secondary-title"></label>
+            <div class="checkbox-list" id="modal-checkboxes"></div>
+        </div>
+
+        <div class="modal-control" id="modal-select-peacetime" style="display: none;">
+            <label for="zone-type" class="modal-label">Area:</label>
+            <select id="peacetime-select" class="dropdown"></select>
+        </div>
+
+        <div class="modal-control" id="modal-time-input">
+            <label for="time-input" class="modal-label">Duration:</label>
+            <input type="number" id="time-input" placeholder="Minutes" class="time-input" min="1" max="120"/>
+        </div>
+
+        <div class="modal-buttons">
+            <div class="left-button">
+                <button class="danger-button" id="danger-button"></button>
+            </div>
+            <div class="right-button">
+                <button class="action-button" id="action-button"></button>
+            </div>
+        </div>            
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

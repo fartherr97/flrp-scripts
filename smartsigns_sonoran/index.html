@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Input</title>
+    <style>
+        body {
+            margin: 0;
+            background: transparent; /* Transparent background for the entire NUI */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #inputBox {
+            font-size: 20px;
+            display: none; /* Initially hidden */
+            outline: none;
+            border: none;
+            background: transparent; /* Transparent background for the input box */
+            color: transparent; /* Hide the text inside the input box */
+            padding: 10px;
+            position: absolute; /* Position it out of view */
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputBox" />
+
+    <script>
+        const inputBox = document.getElementById('inputBox');
+
+        let resourceName = "smartsigns-source";
+        let lastKey = null;
+
+        window.addEventListener('message', (event) => {
+            const data = event.data;
+            if (data.type === "setResourceName") {
+                resourceName = data.resourceName;  // Store the resource name in the variable so that the correct resource is called
+            }
+
+            if (data.type === "toggleInput") {
+                if (data.active) {
+                    inputBox.style.display = "block";
+                    inputBox.focus();
+                } else {
+                    inputBox.style.display = "none";
+                    inputBox.blur();
+                }
+            }
+        });
+
+        // Handle input changes (for regular characters)
+        inputBox.addEventListener('input', (event) => {
+            // We won't send the input field's entire value here
+            // Only focus on the key press events to capture the most recent key pressed
+        });
+
+        // Prevent multiple key presses from being sent at once.
+        let isKeyPressed = false;
+
+        inputBox.addEventListener('keydown', (event) => {
+            if (isKeyPressed) return; // Prevent processing multiple times.
+            isKeyPressed = true;
+
+            const specialKeys = ['Enter', 'Backspace', ' ', 'Tab'];
+
+            // Handle special keys
+            if (specialKeys.includes(event.key)) {
+
+                fetch(`https://${resourceName}/updateInput`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ specialKey: event.key })
+                })
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error));
+            }
+
+            // Handle regular key inputs
+            else if (event.key.length === 1) {  // Only regular characters (not special keys)
+                lastKey = event.key; // Capture the most recent key
+
+                fetch(`https://${resourceName}/updateInput`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ input: lastKey })
+                })
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error));
+            }
+
+            // Allow for key press processing to happen again after the event completes.
+            setTimeout(() => {
+                isKeyPressed = false;
+            }, 40); // 40ms debounce to allow the next key press.
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bodycam" id="bodycam" style="display: none;">
+        <div class="bodycam-information">
+            <div class="bodycam-text" id="bodycam-time"></div>
+            <div class="bodycam-text" id="bodycam-name"></div>
+        </div>
+        <img src="assets/bodycam.png" class="bodycam-icon">
+    </div>
+
+    <div class="duty-interface-menu" id="duty-menu" style="display: none;">
+        <div class="duty-header"><span class="duty-title">Server Duty System</span></div>
+        <div class="duty-body" id="duty-menu-body"></div>
+    </div>
+
+    <div class="units-menu" id="units-menu" style="display: none;">
+        <div class="units-header">
+            <div class="units-header-left">
+                <div class="units-server-icon">
+                    <img src="assets/server_icon.png">
+                </div>
+                <div class="units-header-text">
+                    <span class="units-title">Server Units</span>
+                    <span class="units-subtitle" id="server-name"></span>
+                </div>
+            </div>
+            <div class="units-statistic">
+                <div class="units-status-dot inactive" id="units-status-dot"></div>
+                <span class="units-count" id="units-on-duty-count"></span>
+                <span class="units-on-duty-label">units on duty</span>
+            </div>
+        </div>
+        <div class="units-body"></div>
+    </div>
+
+    <div class="action-modal-overlay" id="action-modal" style="display: none;">
+        <div class="action-modal-content">
+            <div class="unit-profile">
+                <img class="unit-image" id="action-modal-avatar">
+                <div class="info-header-details">
+                    <span class="info-name" id="action-modal-name"></span>
+                    <span class="info-subtext" id="action-modal-department"></span>
+                </div>
+            </div>
+            <div class="action-modal-fields">
+                <div class="action-modal-field" id="action-callsign">
+                    <div class="field-icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-number"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v-10l7 10v-10" /><path d="M15 17h5" /><path d="M17.5 10m-2.5 0a2.5 3 0 1 0 5 0a2.5 3 0 1 0 -5 0" /></svg>
+                    </div>
+                    <div class="field-content">
+                        <div class="field-label" id="callsign-field-label">Callsign</div>
+                        <input type="text" id="action-modal-callsign" />
+                    </div>
+                </div>
+                <div class="action-modal-field" id="action-loadout">
+                    <div class="field-icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock-12"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 0 0 9 9m9 -9a9 9 0 1 0 -18 0" /><path d="M12 7v5l.5 .5" /><path d="M18 15h2a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-1a1 1 0 0 0 -1 1v1a1 1 0 0 0 1 1h2" /><path d="M15 21v-6" /></svg>
+                    </div>
+                    <div class="field-content">
+                        <div class="field-label">Equip Loadout?</div>
+                        <select class="styled-select" id="equip-loadout">
+                            <option value=1>Yes, equip the loadout</option>
+                            <option value=0>No, don't equip the loadout</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="action-modal-field" id="action-bodycam">
+                    <div class="field-icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-camera"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" /><path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
+                    </div>
+                    <div class="field-content">
+                        <div class="field-label">Enable Bodycam?</div>
+                        <select class="styled-select" id="enable-bodycam">
+                            <option value=1>Yes, enable the bodycam</option>
+                            <option value=0>No, don't enable the bodycam</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="action-modal-field" id="action-time">
+                    <div class="field-icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock-12"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 0 0 9 9m9 -9a9 9 0 1 0 -18 0" /><path d="M12 7v5l.5 .5" /><path d="M18 15h2a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-1a1 1 0 0 0 -1 1v1a1 1 0 0 0 1 1h2" /><path d="M15 21v-6" /></svg>
+                    </div>
+                    <div class="field-content">
+                        <div class="field-label">Length</div>
+                        <select class="styled-select" id="suspension-length">
+                            <option value="1">1 hour</option>
+                            <option value="3">3 hours</option>
+                            <option value="12">12 hours</option>
+                            <option value="24">1 day</option>
+                            <option value="72">3 days</option>
+                            <option value="168">1 week</option>
+                            <option value="336">2 weeks</option>
+                            <option value="720">1 month</option>
+                            <option value="0">Indefinite</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="action-modal-field" id="action-reason">
+                    <div class="field-icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-note"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l7 -7" /><path d="M13 20v-6a1 1 0 0 1 1 -1h6v-7a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7" /></svg>
+                    </div>
+                    <div class="field-content">
+                        <div class="field-label">Reason</div>
+                        <textarea id="action-modal-reason" oninput="resize(this)" onkeydown="prevent(event)"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="action-modal-buttons">
+                <button class="action-button" id="action-modal-cancel" onclick="close_modal('action-modal')">Cancel</button>
+                <button class="action-button" id="action-modal-confirm" onclick="submitAction()"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="information-modal-overlay" id="information-modal" style="display: none;">
+        <div class="information-modal" id="unit-information-modal" style="display: none;">
+            <div class="info-header">
+                <div class="unit-profile">
+                    <img class="unit-image" id="unit-avatar">
+                    <div class="info-header-details">
+                        <span class="info-name" id="unit-name"></span>
+                        <span class="info-subtext" id="unit-department"></span>
+                    </div>
+                </div>
+                <div class="info-actions">
+                    <button class="unit-button action" id="unit-information-actions" onclick="openDropdown('unit', event)">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
+                    </button>
+                    <button class="unit-button close" onclick="close_modal('unit-information-modal')">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+                    </button>
+                    <div class="action-dropdown" id="unit-action-dropdown">
+                        <div onclick="openActionModal('unit', 'suspend')" id="unit-suspend">Suspend unit</div>
+                        <div onclick="openActionModal('action', 'unsuspend')" id="unit-unsuspend">Remove suspension</div>
+                        <div onclick="openActionModal('unit', 'offduty')" id="send-off-duty">Send unit off duty</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-body">
+                <div class="info-row">
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-military-rank"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 7v12a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-12l6 -4z" /><path d="M10 13l2 -1l2 1" /><path d="M10 17l2 -1l2 1" /><path d="M10 9l2 -1l2 1" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Rank</div>
+                            <div class="detail-text" id="unit-rank"></div>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-time"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" /><path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M15 3v4" /><path d="M7 3v4" /><path d="M3 11h16" /><path d="M18 16.496v1.504l1 1" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Start of Patrol</div>
+                            <div class="detail-text" id="unit-time"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hourglass"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.5 7h11" /><path d="M6.5 17h11" /><path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" /><path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Total Hours [TW]</div>
+                            <div class="detail-text" id="unit-hours"></div>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-4" /><path d="M12 17v-1" /><path d="M15 17v-2" /><path d="M12 17v-1" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Total Sessions [TW]</div>
+                            <div class="detail-text" id="unit-sessions"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="duty-graph" class="info-graph"></div>
+                <div class="info-row vertical" id="suspended-row" style="display: none;">
+                    <div class="info-row">
+                        <div class="info-detail">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 21v-2a4 4 0 0 1 4 -4h2" /><path d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z" /><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /></svg>
+                            <div class="info-details">
+                                <div class="detail-title">Suspended by</div>
+                                <div class="detail-text" id="suspended-by"></div>
+                            </div>
+                        </div>
+                        <div class="info-detail">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clock-cancel"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.997 12.25a9 9 0 1 0 -8.718 8.745" /><path d="M19 19m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M17 21l4 -4" /><path d="M12 7v5l2 2" /></svg>
+                            <div class="info-details">
+                                <div class="detail-title">Expires</div>
+                                <div class="detail-text" id="suspended-till"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-detail">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-note"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l7 -7" /><path d="M13 20v-6a1 1 0 0 1 1 -1h6v-7a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7" /></svg>
+                            <div class="info-details">
+                                <div class="detail-title">Suspended for</div>
+                                <div class="detail-text reason" id="suspended-reason"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="information-modal" id="department-information-modal" style="display: none;">
+            <div class="info-header">
+                <div class="unit-profile">
+                    <img class="unit-image" id="department-image">
+                    <div class="info-header-details">
+                        <span class="info-name" id="department-name"></span>
+                    </div>
+                </div>
+                <div class="info-actions">
+                    <button class="unit-button close" onclick="close_modal('department-information-modal')">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="info-body">
+                <div class="info-row">
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Units on Duty</div>
+                            <div class="detail-text" id="total-active-units"></div>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users-group"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Total Units</div>
+                            <div class="detail-text" id="total-units"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hourglass"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.5 7h11" /><path d="M6.5 17h11" /><path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" /><path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Total Hours this Week</div>
+                            <div class="detail-text" id="total-hours"></div>
+                        </div>
+                    </div>
+                    <div class="info-detail">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-4" /><path d="M12 17v-1" /><path d="M15 17v-2" /><path d="M12 17v-1" /></svg>
+                        <div class="info-details">
+                            <div class="detail-title">Total Sessions this Week</div>
+                            <div class="detail-text" id="total-sessions"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-graph" id="dept-graph"></div>
+                <div class="info-row vertical">
+                    <div class="suspended-list" id="suspended-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+</body>
+</html>
