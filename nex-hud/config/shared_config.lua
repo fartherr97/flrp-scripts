@@ -2,9 +2,9 @@ Config = {}
 
 -- General Configuration
 Config.DefaultAOP = "bc" -- The available options for the default area of play are: ss, pb, gs, bc, nls, sls, mp, ls, fz and sw
-Config.ServerName = "Nexeum Roleplay" -- This is the server name that shows at the top of the Interface Settings menu.. you'll also want to replace the server_icon.png file in /ui/assets too
-Config.VanityURL = "<accent>store</accent><light>.nexeumstudios.com</light>" -- This is the vanity URL that shows at the top of the map, you can include HTML tags for styling
-Config.DefaultColour = "rgb(111, 201, 255)" -- This is the default accent colour for the interface, new players will automatically have this colour set.. MUST be in the RGB format!
+Config.ServerName = "Florida Roleplay" -- This is the server name that shows at the top of the Interface Settings menu.. you'll also want to replace the server_icon.png file in /ui/assets too
+Config.VanityURL = "<accent>flrp</accent><light>.us</light>" -- This is the vanity URL that shows at the top of the map, you can include HTML tags for styling
+Config.DefaultColour = "rgb(0, 191, 196)" -- This is the default accent colour for the interface, new players will automatically have this colour set.. MUST be in the RGB format!
 Config.ColourCustomisation = true -- If set to false, this will disable the ability for players to change the theme of the interface
 Config.ExtraPriorities = false -- If set to true, this will enable Fort Zancudo and Banks as priority zones
 Config.DisableHealthArmour = false -- If set to true, this will disable the Health, Armour and Microphone elements of the HUD to allow for external integrations with frameworks.
