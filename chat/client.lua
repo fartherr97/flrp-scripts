@@ -59,8 +59,9 @@ end)
 local function addMessage(data)
   SendNUIMessage({ type = 'MESSAGE', message = data })
 end
+-- RegisterNetEvent handles BOTH networked (server) and local TriggerEvent, so a
+-- single registration is enough — a second AddEventHandler would double-render.
 RegisterNetEvent('chat:addMessage', addMessage)
-AddEventHandler('chat:addMessage', addMessage)
 exports('addMessage', addMessage)
 
 -- Command suggestions (autocomplete). Stored + shown by the NUI.
@@ -70,20 +71,17 @@ local function addSuggestion(name, help, params)
   }})
 end
 RegisterNetEvent('chat:addSuggestion', addSuggestion)
-AddEventHandler('chat:addSuggestion', addSuggestion)
 exports('addSuggestion', addSuggestion)
 
 local function removeSuggestion(name)
   SendNUIMessage({ type = 'SUGGEST_REMOVE', name = name })
 end
 RegisterNetEvent('chat:removeSuggestion', removeSuggestion)
-AddEventHandler('chat:removeSuggestion', removeSuggestion)
 
 local function clearChat()
   SendNUIMessage({ type = 'CLEAR' })
 end
 RegisterNetEvent('chat:clear', clearChat)
-AddEventHandler('chat:clear', clearChat)
 exports('clear', clearChat)
 
 -- Pull registered command suggestions from the server on load (so /commands
