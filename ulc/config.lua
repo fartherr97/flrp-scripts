@@ -74,6 +74,7 @@ Config = {
         "HCSO21-24PPVSUVs",      -- [BSO] SUVs
         "FHP-Chargers",          -- [FHP] Chargers
         "fhp-pursuit-suvs-full", -- [FHP] pursuit SUVs
+        "MiamiMegapack",         -- [MPD] Miami pack (ships its own ulc.lua)
 
         -- Variant packs below are disabled in resources.cfg (spawn-code
         -- conflicts). Uncomment each here as it gets enabled there:
