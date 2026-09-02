@@ -1,7 +1,7 @@
 Config = Config or {}
 
 -- General Configuration
-Config.ServerName = "Nexeum Roleplay" -- This is the name of your server, used in the /duty units menu, and more in the future
+Config.ServerName = "Florida Roleplay" -- This is the name of your server, used in the /duty units menu, and more in the future
 Config.EnableInheritance = true -- If true, the player will inherit the permissions of the rank above them.
 Config.DualDuty = true -- If true, the player will be able to be on duty in two entities at once, limited to any entity, then the DualDutyEntity below.
 Config.DualDutyEntity = "staff" -- THe entity that the player can be on duty in, as well as their primary entity.
@@ -30,62 +30,76 @@ Config.LiveMapRefresh = 500 -- The time, in milliseconds, that the positional da
 Config.RestrictLiveMap = false -- If true, the live map will only be accessible to those on duty, and the units visible will be restricted through the configured 'can_view' settings per entity.
 
 -- Nex HUD Integrations (https://nexeum-studios.tebex.io/package/6591574)
-Config.UseNexHUD = false -- If true, the script will automatically send exports to Nex HUD to display the players duty status.
-Config.UseShortName = true -- If true, and the entity has a short name, the short name will be used in the HUD's job details, instead of the entities normal, extended, name. 
+Config.UseNexHUD = true -- If true, the script will automatically send exports to Nex HUD to display the players duty status.
+Config.UseShortName = true -- If true, and the entity has a short name, the short name will be used in the HUD's job details, instead of the entities normal, extended, name.
 Config.DisplayTimeOnHUD = true -- If true, the duty time will be displayed as part of the job details of nex-hud.
 
+-- ==========================================================================
+-- FLRP departments. The `id` of each department MUST be bcso / fhp / mpd —
+-- flrp_duty maps these ids onto the FLRP departments (see the
+-- flrp_duty_entity_bcso / _fhp / _mpd convars). Going on duty grants the
+-- nex-duty.<id>.<rank> ace and the department loadout; going off duty revokes
+-- them. Add real Discord logging guild/channel ids when ready.
+-- ==========================================================================
 Config.Entities = {
     {
-        id = "sasp", -- this is the ID of the entity and is used as part of the ace permission, such as, nex-duty.sasp.<rank>
-        name = "San Andreas State Police",
-        image_url = "https://placehold.co/512x512.png", -- this is the image URL used in the dutylogs.com integrations, must be a direct image link (.png), transparent and aim for 512x512 resolution
-        short_name = "State Police",
-        prefix = "the", -- this is the prefix for the entity, for example, "You have gone off duty with <prefix> <entity_name>" where required. 
-        colour = 3, -- this is the colour of the blip, the list of colours can be found here: https://docs.fivem.net/docs/game-references/blips/#blip-colors
-        has_blips = true, -- this controls whether the entity has duty blips or not
-        require_callsign = true, -- this requires the unit to input a callsign or not
-        loadout = "police", -- this is the loadout offered to units going on duty, this must exist in Config.Loadouts to work
-        enable_bodycam = true, -- this controls whether or not the unit is provided an option for a bodycam for this entity
-        can_view = {"pubcop", "fbi", "dod", "pubdot"}, -- this is a list of other entities duty blips this entity can view
-        logging = { -- this is the independent logging for this entity, seperate to the Config.GlobalLogging, if you department/team is in a seperate discord server
-            enabled = true,
-            guild_id = "",
-            channel_id = ""
-        },
+        id = "bcso",
+        name = "Blaine County Sheriff's Office",
+        image_url = "https://placehold.co/512x512.png",
+        short_name = "BCSO",
+        prefix = "the",
+        colour = 46, -- gold
+        has_blips = true,
+        require_callsign = true,
+        loadout = "police",
+        enable_bodycam = true,
+        can_view = {"fhp", "mpd", "staff"},
+        logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
-            [1] = {
-                rank = "member", -- this is the ID of the rank, used as part of the ace permission, such as, nex-duty.sasp.member, keep this lowercase, no special characters and only use underscores
-                name = "Member", -- this is the name of the rank, pretty cool
-                can_direct_message = true, -- this controls whether the rank can send direct messages to other units via dutylogs.com or not
-                is_supervisor = false, -- this is whether the rank is a supervisor or not, supervisors can suspend/send off non-supervisor members
-                is_command = false, -- this is the same for supervisor, but command can send off non-command members etc etc
-                manage_suspensions = false, -- this is whether the rank can manage suspensions in /duty manage or not.
-                has_global_permissions = false, -- this provides the rank with access to manage units from any and all entities, this will bypass is_supervisor and is_command and hierarchy restrictions
-                ace_permissions = {"test.cool", "test.reallycool"}, -- this is a list of ace permissions the unit gets when going on duty, these are revoked when going off duty
-                groups = {} -- this is a list of ace permission groups the unit gets when going on duty if you're organised like that, these are revoked when going off duty
-            },
-            [2] = {
-                rank = "supervisor",
-                name = "Supervisor",
-                can_direct_message = true,
-                is_supervisor = true,
-                is_command = false,
-                manage_suspensions = true,
-                has_global_permissions = false,
-                ace_permissions = {},
-                groups = {}
-            },
-            [3] = {
-                rank = "high_command",
-                name = "High Command",
-                can_direct_message = true,
-                is_supervisor = false,
-                manage_suspensions = true,
-                is_command = true,
-                has_global_permissions = false,
-                ace_permissions = {},
-                groups = {}
-            },
+            [1] = { rank = "deputy",        name = "Deputy",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "senior_deputy", name = "Senior Deputy", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "sergeant",      name = "Sergeant",      can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [4] = { rank = "command",       name = "Command",       can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+        }
+    },
+    {
+        id = "fhp",
+        name = "Florida Highway Patrol",
+        image_url = "https://placehold.co/512x512.png",
+        short_name = "FHP",
+        prefix = "the",
+        colour = 47, -- dark orange / tan
+        has_blips = true,
+        require_callsign = true,
+        loadout = "police",
+        enable_bodycam = true,
+        can_view = {"bcso", "mpd", "staff"},
+        logging = { enabled = false, guild_id = "", channel_id = "" },
+        ranks = {
+            [1] = { rank = "trooper",        name = "Trooper",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "senior_trooper", name = "Senior Trooper", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "sergeant",       name = "Sergeant",       can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [4] = { rank = "command",        name = "Command",        can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+        }
+    },
+    {
+        id = "mpd",
+        name = "Miami Police Department",
+        image_url = "https://placehold.co/512x512.png",
+        short_name = "MPD",
+        prefix = "the",
+        colour = 3, -- blue
+        has_blips = true,
+        require_callsign = true,
+        loadout = "police",
+        enable_bodycam = true,
+        can_view = {"bcso", "fhp", "staff"},
+        logging = { enabled = false, guild_id = "", channel_id = "" },
+        ranks = {
+            [1] = { rank = "officer",        name = "Officer",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "senior_officer", name = "Senior Officer", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "sergeant",       name = "Sergeant",       can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [4] = { rank = "command",        name = "Command",        can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
         }
     },
     {
@@ -96,7 +110,7 @@ Config.Entities = {
         colour = 4,
         has_blips = false,
         require_callsign = false,
-        can_view = {"sasp", "pubcop", "dod", "fbi", "pubdot"},
+        can_view = {"bcso", "fhp", "mpd"},
         logging = {
             enabled = false,
             guild_id = "",
@@ -111,7 +125,7 @@ Config.Entities = {
                 is_command = false,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [2] = {
                 rank = "moderator",
@@ -121,7 +135,7 @@ Config.Entities = {
                 is_command = false,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [3] = {
                 rank = "senior_moderator",
@@ -131,7 +145,7 @@ Config.Entities = {
                 is_command = false,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [4] = {
                 rank = "junior_administrator",
@@ -141,7 +155,7 @@ Config.Entities = {
                 is_command = false,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [5] = {
                 rank = "administrator",
@@ -151,7 +165,7 @@ Config.Entities = {
                 is_command = false,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [6] = {
                 rank = "senior_administrator",
@@ -161,7 +175,7 @@ Config.Entities = {
                 is_command = true,
                 has_global_permissions = false,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [7] = {
                 rank = "head_administrator",
@@ -171,7 +185,7 @@ Config.Entities = {
                 is_command = true,
                 has_global_permissions = true,
                 ace_permissions = {},
-                groups = {} 
+                groups = {}
             },
             [8] = {
                 rank = "server_management",
@@ -214,4 +228,3 @@ Config.Loadouts = {
 }
 
 -- An internal debugging mode, only enable this if you're asked to :)
-Config.DebugMode = false

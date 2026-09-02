@@ -40,10 +40,12 @@ Config.SpawnPoints = {
         coords = vector4(-1037.74, -2738.04, 20.17, 330.0),
     },
     {
-        name = "Mission Row Police Station",
+        name = "Mission Row PD (MPD)",
         image = "mrpd.jpg",
         coords = vector4(428.23, -984.28, 30.71, 0.0),
-        ace = "nex-duty.lspd" -- this is an example of ace permission integration. If an ace exists in a location, the script will check if the player has it, if they do, the location will show.. if not, it won't show
+        -- To make this MPD-only, gate on an on-duty rank ace, e.g.:
+        --   ace = "nex-duty.mpd.officer"
+        -- (nex-duty grants nex-duty.<dept>.<rank> while on duty. Left public for now.)
     },
     {
         name = "Sandy Shores",
