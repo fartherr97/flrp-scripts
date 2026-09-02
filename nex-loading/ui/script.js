@@ -1,74 +1,84 @@
-// This is where the configuration for the whole system is, set everything up and you're good to go.
+// ==========================================================================
+// FLRP :: Florida Roleplay loading screen configuration.
+// The team-member and Discord-icon images can be either a filename inside
+// assets/ (like the seasonal defaults) OR a full https:// URL — the FiveM
+// loading-screen browser has live internet, so we point them at the FLRP
+// logo hosted on flrp.us instead of bundling it.
+// ==========================================================================
+const FLRP_LOGO = "https://www.flrp.us/images/c8452f76261f8e9c.png";
+
 const server_data = {
-    name: "Random Roleplay",
+    name: "Florida Roleplay",
     discord: {
+        // TODO(FLRP): set `id` to your Discord server ID (enable Developer Mode
+        // in Discord → right-click the server → Copy Server ID) so the live
+        // online/member counts work. Until then the counts fall back to
+        // `total_members` below and the server name.
         id: "123456789123456789",
-        total_members: "2,532",
-        invite_url: "https://discord.gg/randomrp",
-        server_icon: "discord_icon.png" // This is set in assets/
+        total_members: "Join us",
+        invite_url: "https://discord.gg/rFMYbuQpEp",
+        server_icon: FLRP_LOGO
     },
-    // The following six options are the ones available, you don't have to include an option for all of them, feel free to comment out ones you don't need/use and they'll be hidden
+    // Only the socials FLRP actually runs are listed. Add store / tiktok / x /
+    // youtube blocks back in (type + link) when those channels go live.
     socials: [
         {
             type: "website",
-            link: "https://randomrp.com",
-        },
-        {
-            type: "store",
-            link: "https://store.randomrp.com",
-        },
-        {
-            type: "tiktok",
-            link: "https://tiktok.com/@randomrp",
+            link: "https://www.flrp.us",
         },
         {
             type: "discord",
-            link: "https://discord.gg/randomrp",
-        },
-        {
-            type: "x",
-            link: "https://x.com/randomrp",
-        },
-        {
-            type: "youtube",
-            link: "https://youtube.com/randomrp",
+            link: "https://discord.gg/rFMYbuQpEp",
         }
     ],
-    // This is the configuration for the server rules, numbers for the categories and indivudal rules are setup automatically and follow the 1.x, 2.x etc format. You can select colours from 'normal', 'red' and 'blue', blue is usually for discord category and red is for the important categories, but use as you see fit!
+    // Server rules. Categories and rule numbers (1.x, 2.x ...) are generated
+    // automatically. Colours: 'normal', 'red' (important) and 'blue' (Discord).
     rules: [
         {
             category: "Network Rules",
             colour: "red",
             rules: [
                 {
-                    title: "DISCRIMINATORY COMMENTS",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae turpis vel lorem venenatis cursus. Sed in eros in nulla dignissim consequat."
+                    title: "NO HATE OR HARASSMENT",
+                    description: "Discrimination, slurs, hate speech, or harassment of any player — in game, in voice, or in Discord — results in an immediate ban. Treat everyone with respect, OOC and IC."
                 },
                 {
-                    title: "PUNISHMENT EVASION",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Fusce euismod nisl a lectus facilisis, nec fermentum dolor hendrerit."
+                    title: "NO CHEATS OR EXPLOITS",
+                    description: "Mod menus, injectors, macros, or abusing bugs and exploits are strictly prohibited. Found a bug? Report it in a ticket instead of using it."
                 },
                 {
-                    title: "FIVEM TERMS OF SERVICE",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae turpis vel lorem venenatis cursus. Sed in eros in nulla dignissim consequat."
+                    title: "NO BAN OR PUNISHMENT EVASION",
+                    description: "Evading a ban or staff punishment with alternate accounts extends the punishment and can make it permanent. Appeal through Discord, don't evade."
+                },
+                {
+                    title: "FOLLOW THE FIVEM & CFX TERMS",
+                    description: "All players must follow the FiveM and Cfx.re Terms of Service and Code of Conduct at all times while connected to Florida Roleplay."
                 },
             ]
         },
         {
-            category: "Roleplaying Rules",
+            category: "Roleplay Rules",
             colour: "normal",
             rules: [
                 {
-                    title: "FAIL ROLEPLAY",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae turpis vel lorem venenatis cursus. Sed in eros in nulla dignissim consequat."
+                    title: "VALUE OF LIFE & FEAR RP",
+                    description: "Roleplay realistic fear for your character's life. When a gun is on you or you're clearly outnumbered, comply — don't act invincible."
                 },
                 {
-                    title: "BREAKING CHARACTER",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Fusce euismod nisl a lectus facilisis, nec fermentum dolor hendrerit."
+                    title: "NEW LIFE RULE (NLR)",
+                    description: "If your character is downed and respawns, you forget the events leading to your death and cannot return to that scene or seek revenge."
                 },
                 {
-                    title: "META GAMING",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae turpis vel lorem venenatis cursus. Sed in eros in nulla dignissim consequat."
+                    title: "NO RDM / VDM",
+                    description: "No Random Deathmatch or Vehicle Deathmatch. You must have valid, initiated roleplay reasoning before harming another player."
+                },
+                {
+                    title: "NO METAGAMING OR MIXING",
+                    description: "Do not use out-of-character information (streams, Discord, OOC chat) in character. Keep IC and OOC separate at all times."
+                },
+                {
+                    title: "NO FAIL RP",
+                    description: "Roleplay realistically. No unrealistic driving, powergaming, or breaking character in an active scene without an admin present."
                 },
             ]
         },
@@ -77,76 +87,48 @@ const server_data = {
             colour: "blue",
             rules: [
                 {
-                    title: "INAPPROPRIATE CONTENT",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Fusce euismod nisl a lectus facilisis, nec fermentum dolor hendrerit."
+                    title: "KEEP IT RESPECTFUL",
+                    description: "The same respect required in game applies in our Discord. No drama, witch-hunting, or calling out staff/players publicly — use tickets."
                 },
                 {
-                    title: "SPAMMING",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut erat eget massa blandit ullamcorper. Quisque id neque purus, non dignissim purus."
+                    title: "NO SPAM OR NSFW",
+                    description: "No spam, self-promotion, advertising, or NSFW / illegal content in any channel. Keep every channel on-topic."
                 },
                 {
-                    title: "USE COMMON SENSE",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae turpis vel lorem venenatis cursus. Sed in eros in nulla dignissim consequat."
+                    title: "USE TICKETS FOR HELP",
+                    description: "Questions, reports, ban appeals, and department applications all go through the ticket system so staff can help you properly."
                 }
             ]
         },
     ],
-    // This is the configuration for your team members, the images for each team member is set in assets/avatars/, you'll just need to mention the image name, like nexeum.png, and they'll show for that team member.
+    // FLRP leadership. Replace the names/titles with your real staff and, if you
+    // want individual avatars, drop PNGs into assets/avatars/ and set `image`
+    // to the filename. Any entry left on FLRP_LOGO simply shows the FLRP badge.
     team_members: [
         {
-            name: "Michael Scott",
-            title: "Regional Manager",
-            image: "michael.png"
+            name: "Florida Roleplay",
+            title: "Ownership",
+            image: FLRP_LOGO
         },
         {
-            name: "Dwight Schrute",
-            title: "Assistant to the Regional Manager",
-            image: "dwight.png"
+            name: "Community Management",
+            title: "Community & Staff Team",
+            image: FLRP_LOGO
         },
         {
-            name: "Jim Halpert",
-            title: "Sales Representative",
-            image: "jim.png"
+            name: "BCSO Command",
+            title: "Blaine County Sheriff's Office",
+            image: FLRP_LOGO
         },
         {
-            name: "Andy Bernard",
-            title: "Sales Representative",
-            image: "andy.png"
+            name: "FHP Command",
+            title: "Florida Highway Patrol",
+            image: FLRP_LOGO
         },
         {
-            name: "Stanley Hudson",
-            title: "Sales Representative",
-            image: "stanley.png"
-        },
-        {
-            name: "Phyllis Vance",
-            title: "Sales Representative",
-            image: "phyllis.png"
-        },
-        {
-            name: "Pam Beesly",
-            title: "Receptionist",
-            image: "pam.png"
-        },
-        {
-            name: "Oscar Martinez",
-            title: "Accountant",
-            image: "oscar.png"
-        },
-        {
-            name: "Kevin Malone",
-            title: "Accountant",
-            image: "kevin.png"
-        },
-        {
-            name: "Toby Flenderson",
-            title: "Human Resources",
-            image: "toby.png"
-        },
-        {
-            name: "Creed Bratton",
-            title: "Quality Assurance",
-            image: "creed.png"
+            name: "MPD Command",
+            title: "Miami Police Department",
+            image: FLRP_LOGO
         }
     ]
 }
@@ -157,17 +139,24 @@ const backgrounds = [
     // { type: 'video', file: 'video.webm' } // The video file MUST be a .WEBM file, the MP4 file format is not supported!
 ];
 
-// This is where you set the music, all music files are stored in assets/music/, just add the file names to the 'file' below and you're all set!
+// Loading-screen music. Files live in assets/music/ — set the filename plus a
+// title/artist and you're set.
+//
+// !!! DMCA WARNING (FLRP): the two demo tracks that ship with Nex Loading
+// ("Big Dawgs" and "22") are COPYRIGHTED and can get the server struck. Before
+// going live, replace assets/music/loading.mp3 and loading2.mp3 with
+// royalty-free / licensed audio (e.g. YouTube Audio Library, Pixabay Music,
+// Uppbeat) and update the title/artist below to match.
 const music = [
     {
         file: "loading.mp3",
-        title: 'Big Dawgs',
-        artist: 'Hanumankind, Kalmi'
+        title: 'Replace me — royalty-free track 1',
+        artist: 'FLRP'
     },
     {
         file: "loading2.mp3",
-        title: '22',
-        artist: 'Taylor Swift'
+        title: 'Replace me — royalty-free track 2',
+        artist: 'FLRP'
     },
 ];
 
@@ -177,8 +166,8 @@ let theme_override = "";
 
 const themes = {
     default_theme: {
-        description: "It's great to have you here, welcome.. here's a default description for this server, wooho!",
-        accent_colour: "255, 255, 255"
+        description: "Welcome to Florida Roleplay — serious Miami-based RP with BCSO, FHP & MPD. Grab your callsign, get on duty, and keep it clean out there.",
+        accent_colour: "0, 191, 196"
     },
 
     // 15th October to 31st October
@@ -614,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
         memberDiv.classList.add("team-member");
 
         const img = document.createElement("img");
-        img.src = `assets/avatars/${member.image}`;
+        img.src = /^https?:\/\//.test(member.image) ? member.image : `assets/avatars/${member.image}`;
 
         const nameHeading = document.createElement("h3");
         nameHeading.classList.add("team-name");
@@ -699,7 +688,7 @@ async function update_discord_status() {
     const data = await response.json();
 
     total_count.textContent = `${server_data.discord.total_members} Members`;
-    discord_icon.src = `assets/${server_data.discord.server_icon}`;
+    discord_icon.src = /^https?:\/\//.test(server_data.discord.server_icon) ? server_data.discord.server_icon : `assets/${server_data.discord.server_icon}`;
     join_server.onclick = () => window.invokeNative("openUrl", server_data.discord.invite_url);
 
     if (response.status === 404) {
