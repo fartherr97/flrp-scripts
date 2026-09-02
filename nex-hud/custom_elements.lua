@@ -13,7 +13,7 @@ end
 -- This queries nex-duty each interval (30s) to fetch the counts for each part of the custom element.
 Citizen.CreateThread(function()
     while true do
-        local leo_units = exports["nex-duty"]:getUnitsByEntities({ "sasp", "bcso", "lspd" })
+        local leo_units = exports["nex-duty"]:getUnitsByEntities({ "sasp", "bso", "lspd" })
         local staff_units = exports["nex-duty"]:getUnitsByEntities({ "staff" })
         local fire_units = exports["nex-duty"]:getUnitsByEntities({ "samr" })
         local dhs_units = exports["nex-duty"]:getUnitsByEntities({ "dhs" })

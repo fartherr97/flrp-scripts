@@ -145,7 +145,7 @@ let theme_override = "";
 
 const themes = {
     default_theme: {
-        description: "Welcome to Florida Roleplay — serious Miami-based RP with BCSO, FHP & MPD. Grab your callsign, get on duty, and keep it clean out there.",
+        description: "Welcome to Florida Roleplay — serious Miami-based RP with BSO, FHP & MPD. Grab your callsign, get on duty, and keep it clean out there.",
         accent_colour: "0, 191, 196"
     },
 

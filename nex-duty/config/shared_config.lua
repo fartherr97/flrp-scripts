@@ -35,18 +35,18 @@ Config.UseShortName = true -- If true, and the entity has a short name, the shor
 Config.DisplayTimeOnHUD = true -- If true, the duty time will be displayed as part of the job details of nex-hud.
 
 -- ==========================================================================
--- FLRP departments. The `id` of each department MUST be bcso / fhp / mpd —
+-- FLRP departments. The `id` of each department MUST be bso / fhp / mpd —
 -- flrp_duty maps these ids onto the FLRP departments (see the
--- flrp_duty_entity_bcso / _fhp / _mpd convars). Going on duty grants the
+-- flrp_duty_entity_bso / _fhp / _mpd convars). Going on duty grants the
 -- nex-duty.<id>.<rank> ace and the department loadout; going off duty revokes
 -- them. Add real Discord logging guild/channel ids when ready.
 -- ==========================================================================
 Config.Entities = {
     {
-        id = "bcso",
-        name = "Blaine County Sheriff's Office",
+        id = "bso",
+        name = "Broward Sheriff's Office",
         image_url = "https://www.flrp.us/images/c8452f76261f8e9c.png",
-        short_name = "BCSO",
+        short_name = "BSO",
         prefix = "the",
         colour = 46, -- gold
         has_blips = true,
@@ -72,7 +72,7 @@ Config.Entities = {
         require_callsign = true,
         loadout = "police",
         enable_bodycam = true,
-        can_view = {"bcso", "mpd", "staff"},
+        can_view = {"bso", "mpd", "staff"},
         logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
             [1] = { rank = "patrol",     name = "Patrol",     can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
@@ -91,7 +91,7 @@ Config.Entities = {
         require_callsign = true,
         loadout = "police",
         enable_bodycam = true,
-        can_view = {"bcso", "fhp", "staff"},
+        can_view = {"bso", "fhp", "staff"},
         logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
             [1] = { rank = "patrol",     name = "Patrol",     can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
@@ -107,7 +107,7 @@ Config.Entities = {
         colour = 4,
         has_blips = false,
         require_callsign = false,
-        can_view = {"bcso", "fhp", "mpd"},
+        can_view = {"bso", "fhp", "mpd"},
         logging = {
             enabled = false,
             guild_id = "",

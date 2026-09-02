@@ -43,7 +43,7 @@ Config.SpawnPoints = {
         name = "Mission Row PD (MPD)",
         image = "mrpd.jpg",
         coords = vector4(428.23, -984.28, 30.71, 0.0),
-        -- LEO-only: any sworn BCSO/FHP/MPD member may spawn here; civilians are
+        -- LEO-only: any sworn BSO/FHP/MPD member may spawn here; civilians are
         -- refused (checked server-side by nex-spawn). `flrp.leo` is a PERSISTENT
         -- membership ace granted at connection from the player's Discord role —
         -- NOT the on-duty ace (nobody is on duty yet at spawn select), so it is
