@@ -43,9 +43,12 @@ Config.SpawnPoints = {
         name = "Mission Row PD (MPD)",
         image = "mrpd.jpg",
         coords = vector4(428.23, -984.28, 30.71, 0.0),
-        -- To make this MPD-only, gate on an on-duty rank ace, e.g.:
-        --   ace = "nex-duty.mpd.officer"
-        -- (nex-duty grants nex-duty.<dept>.<rank> while on duty. Left public for now.)
+        -- LEO-only: any sworn BCSO/FHP/MPD member may spawn here; civilians are
+        -- refused (checked server-side by nex-spawn). `flrp.leo` is a PERSISTENT
+        -- membership ace granted at connection from the player's Discord role —
+        -- NOT the on-duty ace (nobody is on duty yet at spawn select), so it is
+        -- already held. For MPD-only, use ace = "flrp.dept.mpd" instead.
+        ace = "flrp.leo",
     },
     {
         name = "Sandy Shores",
