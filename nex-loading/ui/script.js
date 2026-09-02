@@ -7,6 +7,12 @@
 // ==========================================================================
 const FLRP_LOGO = "https://www.flrp.us/images/c8452f76261f8e9c.png";
 
+// The Team panel pulls the live Ownership/Directors from the FLRP site (the same
+// Discord-synced list the website home page shows). Point this at wherever the
+// site's API is served. If the fetch fails, the static `team_members` below are
+// shown instead.
+const LEADERSHIP_API = "https://www.flrp.us/api/leadership";
+
 const server_data = {
     name: "Florida Roleplay",
     discord: {
@@ -577,27 +583,52 @@ document.addEventListener("DOMContentLoaded", () => {
         rules_section.appendChild(categoryCard);
     });
 
-    server_data.team_members.forEach(member => {
-        const memberDiv = document.createElement("div");
-        memberDiv.classList.add("team-member");
+    const renderTeam = (members) => {
+        team_section.innerHTML = '';
+        members.forEach(member => {
+            const memberDiv = document.createElement("div");
+            memberDiv.classList.add("team-member");
 
-        const img = document.createElement("img");
-        img.src = /^https?:\/\//.test(member.image) ? member.image : `assets/avatars/${member.image}`;
+            const img = document.createElement("img");
+            img.src = /^https?:\/\//.test(member.image) ? member.image : `assets/avatars/${member.image}`;
 
-        const nameHeading = document.createElement("h3");
-        nameHeading.classList.add("team-name");
-        nameHeading.innerText = member.name;
+            const nameHeading = document.createElement("h3");
+            nameHeading.classList.add("team-name");
+            nameHeading.innerText = member.name;
 
-        const titleParagraph = document.createElement("p");
-        titleParagraph.classList.add("team-title");
-        titleParagraph.innerText = member.title;
+            const titleParagraph = document.createElement("p");
+            titleParagraph.classList.add("team-title");
+            titleParagraph.innerText = member.title;
 
-        memberDiv.appendChild(img);
-        memberDiv.appendChild(nameHeading);
-        memberDiv.appendChild(titleParagraph);
+            memberDiv.appendChild(img);
+            memberDiv.appendChild(nameHeading);
+            memberDiv.appendChild(titleParagraph);
 
-        team_section.appendChild(memberDiv);
-    });
+            team_section.appendChild(memberDiv);
+        });
+    };
+
+    // Show the static config immediately, then try to replace it with the live
+    // Discord-synced Ownership/Directors from the FLRP site. Any failure (site
+    // down, CORS, empty) silently keeps the static list.
+    renderTeam(server_data.team_members);
+
+    fetch(LEADERSHIP_API, { cache: 'no-store' })
+        .then(r => (r.ok ? r.json() : null))
+        .then(data => {
+            if (!data) return;
+            const toMembers = (arr, fallbackTitle) => (arr || []).map(p => ({
+                name: p.name || p.handle || 'Member',
+                title: p.role || fallbackTitle,
+                image: p.avatar || FLRP_LOGO,
+            }));
+            const live = [
+                ...toMembers(data.ownership, 'Ownership'),
+                ...toMembers(data.directors, 'Director'),
+            ];
+            if (live.length) renderTeam(live);
+        })
+        .catch(() => {});
 
     const social_buttons = document.getElementById('social-buttons')
 
