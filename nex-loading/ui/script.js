@@ -127,21 +127,16 @@ const backgrounds = [
 // Loading-screen music. Files live in assets/music/ — set the filename plus a
 // title/artist and you're set.
 //
-// !!! DMCA WARNING (FLRP): the two demo tracks that ship with Nex Loading
-// ("Big Dawgs" and "22") are COPYRIGHTED and can get the server struck. Before
-// going live, replace assets/music/loading.mp3 and loading2.mp3 with
-// royalty-free / licensed audio (e.g. YouTube Audio Library, Pixabay Music,
-// Uppbeat) and update the title/artist below to match.
+// !!! DMCA NOTE (FLRP): "Miami" by Morgan Wallen is a copyrighted commercial
+// track. FiveM/Cfx can issue DMCA strikes for loading-screen music, so this is
+// used at FLRP's own risk. Drop the audio file in as assets/music/loading.mp3
+// (the config below expects that filename). Swap to a royalty-free track any
+// time if you'd rather avoid the risk.
 const music = [
     {
         file: "loading.mp3",
-        title: 'Replace me — royalty-free track 1',
-        artist: 'FLRP'
-    },
-    {
-        file: "loading2.mp3",
-        title: 'Replace me — royalty-free track 2',
-        artist: 'FLRP'
+        title: 'Miami',
+        artist: 'Morgan Wallen'
     },
 ];
 
