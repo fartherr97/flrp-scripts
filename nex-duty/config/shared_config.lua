@@ -45,7 +45,7 @@ Config.Entities = {
     {
         id = "bcso",
         name = "Blaine County Sheriff's Office",
-        image_url = "https://placehold.co/512x512.png",
+        image_url = "https://www.flrp.us/images/c8452f76261f8e9c.png",
         short_name = "BCSO",
         prefix = "the",
         colour = 46, -- gold
@@ -65,7 +65,7 @@ Config.Entities = {
     {
         id = "fhp",
         name = "Florida Highway Patrol",
-        image_url = "https://placehold.co/512x512.png",
+        image_url = "https://www.flrp.us/images/c8452f76261f8e9c.png",
         short_name = "FHP",
         prefix = "the",
         colour = 47, -- dark orange / tan
@@ -85,7 +85,7 @@ Config.Entities = {
     {
         id = "mpd",
         name = "Miami Police Department",
-        image_url = "https://placehold.co/512x512.png",
+        image_url = "https://www.flrp.us/images/c8452f76261f8e9c.png",
         short_name = "MPD",
         prefix = "the",
         colour = 3, -- blue
@@ -105,7 +105,7 @@ Config.Entities = {
     {
         id = "staff",
         name = "Staff",
-        image_url = "https://placehold.co/512x512.png",
+        image_url = "https://www.flrp.us/images/c8452f76261f8e9c.png",
         prefix = "",
         colour = 4,
         has_blips = false,
