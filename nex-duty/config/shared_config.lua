@@ -56,10 +56,9 @@ Config.Entities = {
         can_view = {"fhp", "mpd", "staff"},
         logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
-            [1] = { rank = "deputy",        name = "Deputy",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [2] = { rank = "senior_deputy", name = "Senior Deputy", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [3] = { rank = "sergeant",      name = "Sergeant",      can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [4] = { rank = "command",       name = "Command",       can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [1] = { rank = "patrol",     name = "Patrol",     can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "supervisor", name = "Supervisor", can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "command",    name = "Command",    can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
         }
     },
     {
@@ -76,10 +75,9 @@ Config.Entities = {
         can_view = {"bcso", "mpd", "staff"},
         logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
-            [1] = { rank = "trooper",        name = "Trooper",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [2] = { rank = "senior_trooper", name = "Senior Trooper", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [3] = { rank = "sergeant",       name = "Sergeant",       can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [4] = { rank = "command",        name = "Command",        can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [1] = { rank = "patrol",     name = "Patrol",     can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "supervisor", name = "Supervisor", can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "command",    name = "Command",    can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
         }
     },
     {
@@ -96,10 +94,9 @@ Config.Entities = {
         can_view = {"bcso", "fhp", "staff"},
         logging = { enabled = false, guild_id = "", channel_id = "" },
         ranks = {
-            [1] = { rank = "officer",        name = "Officer",        can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [2] = { rank = "senior_officer", name = "Senior Officer", can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [3] = { rank = "sergeant",       name = "Sergeant",       can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
-            [4] = { rank = "command",        name = "Command",        can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [1] = { rank = "patrol",     name = "Patrol",     can_direct_message = true, is_supervisor = false, is_command = false, manage_suspensions = false, has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [2] = { rank = "supervisor", name = "Supervisor", can_direct_message = true, is_supervisor = true,  is_command = false, manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
+            [3] = { rank = "command",    name = "Command",    can_direct_message = true, is_supervisor = false, is_command = true,  manage_suspensions = true,  has_global_permissions = false, ace_permissions = {}, groups = {} },
         }
     },
     {
