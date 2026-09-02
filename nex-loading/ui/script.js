@@ -16,7 +16,7 @@ const server_data = {
         // `total_members` below and the server name.
         id: "123456789123456789",
         total_members: "Join us",
-        invite_url: "https://discord.gg/rFMYbuQpEp",
+        invite_url: "https://discord.gg/floridarp",
         server_icon: FLRP_LOGO
     },
     // Only the socials FLRP actually runs are listed. Add store / tiktok / x /
@@ -28,7 +28,7 @@ const server_data = {
         },
         {
             type: "discord",
-            link: "https://discord.gg/rFMYbuQpEp",
+            link: "https://discord.gg/floridarp",
         }
     ],
     // Server rules. Categories and rule numbers (1.x, 2.x ...) are generated
@@ -106,28 +106,13 @@ const server_data = {
     // to the filename. Any entry left on FLRP_LOGO simply shows the FLRP badge.
     team_members: [
         {
-            name: "Florida Roleplay",
-            title: "Ownership",
+            name: "Ownership",
+            title: "Florida Roleplay",
             image: FLRP_LOGO
         },
         {
-            name: "Community Management",
-            title: "Community & Staff Team",
-            image: FLRP_LOGO
-        },
-        {
-            name: "BCSO Command",
-            title: "Blaine County Sheriff's Office",
-            image: FLRP_LOGO
-        },
-        {
-            name: "FHP Command",
-            title: "Florida Highway Patrol",
-            image: FLRP_LOGO
-        },
-        {
-            name: "MPD Command",
-            title: "Miami Police Department",
+            name: "Directors",
+            title: "Florida Roleplay",
             image: FLRP_LOGO
         }
     ]
