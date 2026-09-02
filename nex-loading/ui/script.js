@@ -10,11 +10,10 @@ const FLRP_LOGO = "https://www.flrp.us/images/c8452f76261f8e9c.png";
 const server_data = {
     name: "Florida Roleplay",
     discord: {
-        // TODO(FLRP): set `id` to your Discord server ID (enable Developer Mode
-        // in Discord → right-click the server → Copy Server ID) so the live
-        // online/member counts work. Until then the counts fall back to
-        // `total_members` below and the server name.
-        id: "123456789123456789",
+        // Live online/member counts require the server widget to be enabled:
+        // Discord → Server Settings → Widget → Enable Server Widget. Without
+        // it the fetch 404s and the counts fall back to `total_members` below.
+        id: "1531345922473066686",
         total_members: "Join us",
         invite_url: "https://discord.gg/floridarp",
         server_icon: FLRP_LOGO
